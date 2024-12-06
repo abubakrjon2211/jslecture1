@@ -93,24 +93,7 @@ if (age >= 18) {
 } else {
   console.log("Вы несовершеннолетний.");
 }
-switch:
 
-javascript
-Копировать код
-let day = 3;
-switch (day) {
-  case 1:
-    console.log("Понедельник");
-    break;
-  case 2:
-    console.log("Вторник");
-    break;
-  case 3:
-    console.log("Среда");
-    break;
-  default:
-    console.log("Неизвестный день");
-}
 Циклы:
 for:
 
@@ -128,15 +111,7 @@ while (i < 5) {
   console.log(i);
   i++;
 }
-do...while:
 
-javascript
-Копировать код
-let i = 0;
-do {
-  console.log(i);
-  i++;
-} while (i < 5);
 Функции в JavaScript
 Функции — это блоки кода, которые выполняются при вызове. Они помогают организовывать и повторно использовать код.
 
@@ -192,72 +167,3 @@ console.log(fruits[0]);  // яблоко
 fruits.push("груша");  // добавляет элемент в конец
 console.log(fruits);
 
-fruits.pop();  // удаляет последний элемент
-console.log(fruits);
-Асинхронность в JavaScript
-JavaScript поддерживает асинхронное выполнение кода, что позволяет выполнять задачи параллельно, не блокируя главный поток. Основными средствами для работы с асинхронностью являются колбэки, промисы и async/await.
-
-Колбэки
-Колбэк — это функция, которая передается в другую функцию как аргумент и вызывается, когда завершится выполнение асинхронной операции.
-
-javascript
-Копировать код
-function fetchData(callback) {
-  setTimeout(() => {
-    console.log("Данные получены");
-    callback();
-  }, 2000);
-}
-
-fetchData(() => {
-  console.log("Процесс завершен.");
-});
-Промисы
-Промисы — это объекты, которые представляют собой результат асинхронной операции, которая может быть завершена успешно или с ошибкой.
-
-javascript
-Копировать код
-let promise = new Promise((resolve, reject) => {
-  let success = true;
-
-  if (success) {
-    resolve("Операция успешна");
-  } else {
-    reject("Ошибка");
-  }
-});
-
-promise
-  .then(result => console.log(result))
-  .catch(error => console.log(error));
-Async/Await
-async и await позволяют работать с промисами более удобным способом, делая код более читаемым.
-
-javascript
-Копировать код
-async function fetchData() {
-  try {
-    let response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    let data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.log("Ошибка при загрузке данных:", error);
-  }
-}
-
-fetchData();
-Работа с DOM (Document Object Model)
-DOM — это интерфейс программирования, который позволяет взаимодействовать с HTML-документом с помощью JavaScript. С помощью DOM можно изменять структуру веб-страницы, добавлять, удалять элементы и изменять их содержимое.
-
-Пример изменения содержимого страницы:
-javascript
-Копировать код
-let title = document.getElementById("title");
-title.innerHTML = "Добро пожаловать в мир JavaScript!";
-Пример обработки событий:
-javascript
-Копировать код
-let button = document.getElementById("myButton");
-button.addEventListener("click", function() {
-  alert("Кнопка была нажата!");
-});
